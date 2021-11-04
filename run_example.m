@@ -48,7 +48,7 @@ get_test('Determined system (6 equations, 6 variables, well-conditioned)', R_ref
 % The excitation matrix contains 6 linearly independent operating points.
 % However, the different operating points are quasi-colinear.
 % therefore, the equation system is determined but badly conditionned.
-I_operating_mat = ones(10, 3)+0.001.*rand(10,3);
+I_operating_mat = ones(10, 3)+1e-3.*rand(10,3);
 
 % Get the losses, extract the matrix, and compare the results with the reference matrix.
 get_test('Determined system (6 equations, 6 variables, ill-conditioned)', R_ref_mat, I_operating_mat);
@@ -88,7 +88,10 @@ function get_test(tag, R_ref_mat, I_operating_mat)
 P_operating_vec = 0.5.*diag(I_operating_mat*R_ref_mat*I_operating_mat');
 
 % Extract the resistance matrix from the excitation matrix and the loss vector.
-[R_operating_mat, rcond_eqn, rel_res_vec] = get_matrix(I_operating_mat, P_operating_vec);
+[R_operating_mat, res_vec, rcond_eqn] = get_matrix(I_operating_mat, P_operating_vec);
+
+% Scale the residuum into a relative residuum.
+rel_res_vec = res_vec./P_operating_vec;
 
 % Compute the relative error between the reference and extracted matrices.
 rel_err_mat = (R_operating_mat-R_ref_mat)./R_ref_mat;
