@@ -6,8 +6,8 @@
 ![status - maintained](https://img.shields.io/badge/status-maintained-green)
 
 This **MATLAB code** extracts the **resistance/inductance matrix** of a system:
-* Different **operating points** are provided (current excitations).
-* The associated **losses/energies** are provided.
+* Different **operating points** are provided (measured or simulated current excitations).
+* The associated **losses/energies** are provided (measured or simulated values).
 * The corresponding resistance/inductance matrix is **extracted**.
 
 The following the **quadratic form** is linking the following variables:
