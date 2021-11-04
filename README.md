@@ -18,7 +18,7 @@ The following the **quadratic form** is linking the following variables:
 
 This code is handling the following cases:
 * `n_op` is the number of provided operating conditions
-* `n_var` is the number of inpedent coefficient of the resistance/inductance matrix
+* `n_var` is the number of independent coefficients of the resistance/inductance matrix
 * `n_op<n_var`: under-determined equation system => invalid problem
 * `n_op==n_var`: determined equation system => linear equation system
 * `n_op>n_var`: over-determined equation system => least-square fit
