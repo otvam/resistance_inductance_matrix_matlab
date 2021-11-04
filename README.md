@@ -10,22 +10,22 @@ This **MATLAB code** extracts the **resistance/inductance matrix** of a system:
 * The associated **losses/energies** are provided (measured or simulated values).
 * The corresponding resistance/inductance matrix is **extracted**.
 
-The following the **quadratic form** is linking the following variables:
+The following the **quadratic form** is linking the aforementionned variables:
 * `U = 0.5*I_vec'*Q_mat*I_vec`
-* `I_vec` is the current excitation vector
+* `I_vec` is the vector containing the applied currents
 * `Q_mat` is the resistance/inductance matrix
 * `U` is the loss/energy value
 
 This code is handling the following cases:
-* `n_op` is the number of provided operating conditions
-* `n_var` is the number of independent coefficients of the resistance/inductance matrix
+* `n_op` is the number of provided operating points
+* `n_var` is the number of independent coefficients for the resistance/inductance matrix
 * `n_op<n_var`: under-determined equation system => invalid problem
 * `n_op==n_var`: determined equation system => linear equation system
 * `n_op>n_var`: over-determined equation system => least-square fit
 
 The condition number of the equation system and the residuum are computed.
 This is required to ensure that the resistance/inductance matrix is numerically robust.
-Finally, the code ensures that the extracted matrix is physical (symmetric and positive definite).
+Finally, the code checks that the extracted matrix is physical (symmetric and positive definite).
 
 ## Compatibility
 
