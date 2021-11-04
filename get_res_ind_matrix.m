@@ -5,11 +5,11 @@ function [Q_mat, res_vec, rcond_eqn] = get_res_ind_matrix(I_mat, U_vec)
 %    The associated losses/energies are provided.
 %    The corresponding resistance/inductance matrix is extracted.
 %
-%    The following the quadratic form is linking the different variables:
-%        - U = 0.5*I'*Q_mat*I
-%        - I is the current excitation vector
-%        - U is the loss/energy value
+%    The following the quadratic form is linking the following variables:
+%        - U = 0.5*I_vec'*Q_mat*I_vec
+%        - I_vec is the current excitation vector
 %        - Q_mat is the resistance/inductance matrix
+%        - U is the loss/energy value
 %
 %    The following numbers describe the number of variables:
 %        - n_mat: size of the resistance/inductance matrix
