@@ -1,5 +1,10 @@
 # MATLAB Code for Extracting Resistance/Inductance Matrices
 
+![license - BSD](https://img.shields.io/badge/license-BSD-green)
+![language - MATLAB](https://img.shields.io/badge/language-MATLAB-blue)
+![category - power electronics](https://img.shields.io/badge/category-power%20electronics-lightgrey)
+![status - maintained](https://img.shields.io/badge/status-maintained-green)
+
 This **MATLAB code** extracts the **resistance/inductance matrix** of a system:
 * Different **operating points** are provided (current excitations).
 * The associated **losses/energies** are provided.
