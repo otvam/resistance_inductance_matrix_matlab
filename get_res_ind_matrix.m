@@ -1,11 +1,11 @@
-function [Q_mat, res_vec, rcond_eqn] = get_matrix(I_mat, U_vec)
+function [Q_mat, res_vec, rcond_eqn] = get_res_ind_matrix(I_mat, U_vec)
 % Extract a resistance/inductance matrix from operating points.
 %
 %    Different operating points are provided (current excitations).
 %    The associated losses/energies are provided.
 %    The corresponding resistance/inductance matrix is extracted.
 %
-%    The following the quadratic form is used
+%    The following the quadratic form is linking the different variables:
 %        - U = 0.5*I'*Q_mat*I
 %        - I is the current excitation vector
 %        - U is the loss/energy value
@@ -29,7 +29,7 @@ function [Q_mat, res_vec, rcond_eqn] = get_matrix(I_mat, U_vec)
 %        - n_op>n_var: over-determined equation system => least-square fit
 %
 %    Errors are raised for the following cases:
-%        - the equation system is under-determined 
+%        - the equation system is under-determined
 %        - the equation system singular or quasi-singular
 %        - the resistance/inductance matrix has negative eigenvalues
 %

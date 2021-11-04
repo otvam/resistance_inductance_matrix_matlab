@@ -88,7 +88,7 @@ function get_test(tag, R_ref_mat, I_operating_mat)
 P_operating_vec = 0.5.*diag(I_operating_mat*R_ref_mat*I_operating_mat');
 
 % Extract the resistance matrix from the excitation matrix and the loss vector.
-[R_operating_mat, res_vec, rcond_eqn] = get_matrix(I_operating_mat, P_operating_vec);
+[R_operating_mat, res_vec, rcond_eqn] = get_res_ind_matrix(I_operating_mat, P_operating_vec);
 
 % Scale the residuum into a relative residuum.
 rel_res_vec = res_vec./P_operating_vec;
